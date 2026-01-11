@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <style>
         @font-face {
             font-family: 'SF Pro Display';
@@ -767,6 +770,17 @@
             color: var(--white);
         }
 
+        .calendly-container {
+            max-width: 700px;
+            margin: 0 auto 24px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .calendly-inline-widget {
+            border-radius: 16px;
+        }
+
         /* Footer */
         footer {
             background: var(--gray-900);
@@ -842,7 +856,7 @@
         <p class="hero-subtitle">Nueva línea de ingresos para tu institución educativa. Sin riesgo operativo. Sin esfuerzo de gestión.</p>
         <p class="hero-detail">El Seguro de Continuidad Educativa con IA que protege las matrículas de tus familias y genera comisiones del 15% para tu centro.</p>
 
-        <a href="#demo" class="cta-primary">Solicitar demo ejecutiva</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/coberio-educacion/30min'});return false;" class="cta-primary">Agendar demo ejecutiva</a>
         <a href="#calculadora" class="cta-secondary">
             Ver proyección de ingresos
             <svg viewBox="0 0 14 14" fill="currentColor"><path d="M7.5 1.5v5h5v1h-5v5h-1v-5h-5v-1h5v-5z" transform="rotate(45 7 7)"/></svg>
@@ -1127,30 +1141,14 @@
     <section class="cta-section" id="demo">
         <div class="container">
             <p class="section-eyebrow">Siguiente paso</p>
-            <h2 class="section-title">Solicita una demo ejecutiva</h2>
+            <h2 class="section-title">Agenda una demo ejecutiva</h2>
             <p class="section-subtitle">Calculamos el impacto específico para tu institución en una reunión de 30 minutos con nuestro equipo directivo</p>
 
-            <div class="form-container">
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="nombre" placeholder="Nombre completo" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="cargo" placeholder="Cargo (ej: CEO, CFO, Director General)" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="institucion" placeholder="Institución" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" name="email" placeholder="Email corporativo" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-input" name="telefono" placeholder="Teléfono (opcional)">
-                    </div>
-                    <button type="submit" class="submit-btn">Solicitar demo ejecutiva</button>
-                </form>
-                <p class="form-note"><strong>Prueba piloto disponible</strong> — Implementación gratuita en un centro para validar resultados antes de escalar</p>
+            <div class="calendly-container">
+                <!-- Calendly inline widget -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/coberio-educacion/30min?hide_gdpr_banner=1&background_color=1d1d1f&text_color=ffffff&primary_color=0071e3" style="min-width:320px;height:700px;"></div>
             </div>
+            <p class="form-note"><strong>Prueba piloto disponible</strong> — Implementación gratuita en un centro para validar resultados antes de escalar</p>
         </div>
     </section>
 
