@@ -185,19 +185,19 @@
         /* Credibility Banner */
         .credibility {
             background: var(--gray-100);
-            padding: 24px 22px;
+            padding: 32px 22px;
             text-align: center;
         }
 
         .credibility-content {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px;
             align-items: center;
         }
 
         .credibility p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--gray-600);
         }
 
@@ -206,22 +206,26 @@
         }
 
         @media (min-width: 768px) {
+            .credibility {
+                padding: 40px 22px;
+            }
             .credibility-content {
                 flex-direction: row;
                 justify-content: center;
-                gap: 32px;
+                gap: 48px;
             }
-            .credibility-content p {
+            .credibility p {
+                font-size: 17px;
                 position: relative;
             }
             .credibility-content p:not(:last-child)::after {
                 content: '';
                 position: absolute;
-                right: -16px;
+                right: -24px;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 1px;
-                height: 16px;
+                height: 20px;
                 background: var(--gray-400);
             }
         }
@@ -479,10 +483,11 @@
         }
 
         .scenario-metric-value {
-            font-size: 28px;
+            font-size: clamp(20px, 3vw, 28px);
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 4px;
+            white-space: nowrap;
         }
 
         .scenario-metric-label {
@@ -828,12 +833,6 @@
             color: var(--white);
         }
 
-        .footer-contact a {
-            color: var(--gray-400);
-            text-decoration: none;
-            font-size: 13px;
-        }
-
         .footer-regulatory {
             font-size: 12px;
             max-width: 600px;
@@ -1165,10 +1164,6 @@
                 <a href="#">Política de Privacidad</a>
                 <a href="#">Términos</a>
                 <a href="#">Aviso Legal</a>
-            </div>
-
-            <div class="footer-contact">
-                <a href="mailto:info@coberio.es">info@coberio.es</a>
             </div>
 
             <p class="footer-regulatory">
