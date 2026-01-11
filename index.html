@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Seguro de Continuidad Educativa con IA - Genera hasta 1,4M EUR por cohorte y reduce el riesgo financiero de tu institucion">
+    <meta name="description" content="Seguro de Continuidad Educativa con IA - Genera hasta 1,4M € por cohorte y reduce el riesgo financiero de tu institución">
     <title>Seguro de Continuidad Educativa | SegurosIA + Coberio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
             --gray-400: #d2d2d7;
             --gray-100: #f5f5f7;
             --white: #ffffff;
+            --green: #34c759;
             --section-padding: clamp(80px, 12vw, 140px);
         }
 
@@ -106,7 +107,7 @@
         .hero-detail {
             font-size: 17px;
             color: var(--gray-600);
-            max-width: 520px;
+            max-width: 580px;
             margin-bottom: 40px;
             line-height: 1.47;
         }
@@ -405,76 +406,120 @@
 
         .calculator-header {
             text-align: center;
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto 48px;
         }
 
-        .calculator-card {
-            background: var(--gray-100);
-            border-radius: 24px;
-            overflow: hidden;
+        .calculator-context {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-top: 16px;
+            line-height: 1.5;
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
             max-width: 900px;
             margin: 0 auto 48px;
         }
 
-        .calculator-top {
-            background: var(--gray-900);
+        .scenario-card {
+            background: var(--gray-100);
+            border-radius: 24px;
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scenario-card.recommended {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+            border: 2px solid var(--primary);
+        }
+
+        .scenario-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
             color: var(--white);
-            padding: 24px 32px;
-            text-align: center;
-        }
-
-        .calculator-top h3 {
-            font-size: 19px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .calculator-top p {
-            font-size: 14px;
-            opacity: 0.7;
-        }
-
-        .calculator-table {
-            overflow-x: auto;
-        }
-
-        .calculator-table table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-
-        .calculator-table th {
-            background: var(--white);
-            padding: 16px 20px;
-            text-align: left;
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.04em;
+        }
+
+        .scenario-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .scenario-desc {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .scenario-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .scenario-metric {
+            text-align: center;
+        }
+
+        .scenario-metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .scenario-metric-label {
+            font-size: 13px;
             color: var(--gray-600);
         }
 
-        .calculator-table td {
-            padding: 20px;
-            font-size: 15px;
-            background: var(--white);
-            border-top: 1px solid var(--gray-100);
+        .scenario-result {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            text-align: center;
         }
 
-        .calculator-table .highlight {
-            font-size: 19px;
+        .scenario-result-label {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .scenario-result-value {
+            font-size: clamp(36px, 6vw, 48px);
             font-weight: 700;
             color: var(--primary);
+            letter-spacing: -0.03em;
         }
 
-        .calculator-table .recommended {
-            background: #f0f7ff;
+        .scenario-result-period {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-top: 4px;
         }
 
-        .calculator-table .recommended td {
-            background: #f0f7ff;
+        @media (min-width: 768px) {
+            .scenarios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .scenario-metrics {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .value-props {
@@ -793,13 +838,13 @@
     <!-- Hero -->
     <section class="hero">
         <p class="hero-eyebrow">SegurosIA + Coberio Broker</p>
-        <h1>1,4M EUR por cohorte</h1>
-        <p class="hero-subtitle">Nueva fuente de ingresos para tu institucion educativa. Sin riesgo. Sin esfuerzo.</p>
-        <p class="hero-detail">Seguro de Continuidad Educativa con IA que protege a las familias y genera comisiones del 15% para tu centro.</p>
+        <h1>+1,4M € por cohorte</h1>
+        <p class="hero-subtitle">Nueva línea de ingresos para tu institución educativa. Sin riesgo operativo. Sin esfuerzo de gestión.</p>
+        <p class="hero-detail">El Seguro de Continuidad Educativa con IA que protege las matrículas de tus familias y genera comisiones del 15% para tu centro.</p>
 
-        <a href="#demo" class="cta-primary">Solicitar demo gratuita</a>
+        <a href="#demo" class="cta-primary">Solicitar demo ejecutiva</a>
         <a href="#calculadora" class="cta-secondary">
-            Ver proyeccion de ingresos
+            Ver proyección de ingresos
             <svg viewBox="0 0 14 14" fill="currentColor"><path d="M7.5 1.5v5h5v1h-5v5h-1v-5h-5v-1h5v-5z" transform="rotate(45 7 7)"/></svg>
         </a>
 
@@ -818,7 +863,7 @@
         <div class="credibility-content">
             <p><strong>CB Insights</strong> Top 75 Embedded Insurance</p>
             <p><strong>DGSFP</strong> Autorizados oficialmente</p>
-            <p><strong>Sandbox 2025</strong> Unicos aprobados</p>
+            <p><strong>Sandbox 2025</strong> Únicos aprobados en España</p>
         </div>
     </section>
 
@@ -826,20 +871,20 @@
     <section class="stats">
         <div class="container-wide">
             <div class="stats-header">
-                <p class="section-eyebrow">El problema</p>
-                <h2 class="section-title">La incertidumbre financiera amenaza la continuidad educativa</h2>
+                <p class="section-eyebrow">El desafío</p>
+                <h2 class="section-title">La incertidumbre financiera de las familias impacta en tu cuenta de resultados</h2>
             </div>
 
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">56%</div>
-                    <div class="stat-label">de espanoles temen perder su empleo</div>
+                    <div class="stat-label">de los españoles temen perder su empleo</div>
                     <div class="stat-source">Forbes / Randstad</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">>1M EUR</div>
-                    <div class="stat-label">en deuda por morosidad con 1% de impago en 4 anos</div>
-                    <div class="stat-source">30.000 alumnos, 3.600 EUR/ano</div>
+                    <div class="stat-number">>1M €</div>
+                    <div class="stat-label">en deuda acumulada por morosidad con solo un 1% de impago</div>
+                    <div class="stat-source">Proyección a 4 años · 30.000 alumnos</div>
                 </div>
             </div>
         </div>
@@ -849,9 +894,9 @@
     <section class="solution">
         <div class="container-wide">
             <div class="solution-header">
-                <p class="section-eyebrow">La solucion</p>
+                <p class="section-eyebrow">La solución</p>
                 <h2 class="section-title">Seguro de Continuidad de Estudios</h2>
-                <p class="section-subtitle">Proteccion integral que reembolsa la matricula durante 12 meses si la familia sufre un imprevisto. Documentacion oficial de Mapfre, AXA o Helvetia.</p>
+                <p class="section-subtitle">Protección integral que reembolsa la matrícula durante 12 meses si la familia sufre un imprevisto financiero. Documentación oficial emitida por Mapfre, AXA o Helvetia.</p>
             </div>
 
             <div class="guarantees">
@@ -860,7 +905,7 @@
                         <svg viewBox="0 0 24 24"><path d="M20 6H4V4h16v2zm-2 6H6v-2h12v2zm2 6H4v-2h16v2z"/></svg>
                     </div>
                     <div>
-                        <h3>Perdida de empleo</h3>
+                        <h3>Pérdida involuntaria de empleo</h3>
                         <p>Cobertura para empleados por cuenta ajena que pierden su trabajo de forma involuntaria</p>
                     </div>
                 </div>
@@ -870,7 +915,7 @@
                     </div>
                     <div>
                         <h3>Incapacidad temporal</h3>
-                        <p>Actividad remunerada y no cubiertos por desempleo que sufren incapacidad</p>
+                        <p>Para autónomos y profesionales con actividad remunerada no cubiertos por desempleo</p>
                     </div>
                 </div>
                 <div class="guarantee">
@@ -878,8 +923,8 @@
                         <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/></svg>
                     </div>
                     <div>
-                        <h3>Hospitalizacion</h3>
-                        <p>Cobertura mundial para hospitalizacion por cualquier causa</p>
+                        <h3>Hospitalización</h3>
+                        <p>Cobertura mundial para hospitalización del pagador por cualquier causa</p>
                     </div>
                 </div>
                 <div class="guarantee">
@@ -888,7 +933,7 @@
                     </div>
                     <div>
                         <h3>Fallecimiento</h3>
-                        <p>Cobertura mundial por fallecimiento del pagador por cualquier causa</p>
+                        <p>Cobertura mundial por fallecimiento del pagador de la matrícula por cualquier causa</p>
                     </div>
                 </div>
             </div>
@@ -900,15 +945,15 @@
                 </div>
                 <div class="feature">
                     <div class="feature-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                    <span>Limite: coste anual del curso academico</span>
+                    <span>Límite: coste anual del curso académico completo</span>
                 </div>
                 <div class="feature">
                     <div class="feature-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                    <span>IA Agentica para distribucion y claims en 24h</span>
+                    <span>IA Agéntica para distribución y resolución de claims en 24h</span>
                 </div>
                 <div class="feature">
                     <div class="feature-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                    <span>Documentacion oficial con sello de la aseguradora</span>
+                    <span>Documentación oficial con sello de la aseguradora</span>
                 </div>
             </div>
         </div>
@@ -918,62 +963,86 @@
     <section class="calculator" id="calculadora">
         <div class="container-wide">
             <div class="calculator-header">
-                <p class="section-eyebrow">Impacto financiero</p>
-                <h2 class="section-title">Proyeccion de ingresos</h2>
-                <p class="section-subtitle">Basado en 30.000 alumnos, 4 anos de media, coste anual 3.600 EUR</p>
+                <p class="section-eyebrow">Impacto en cuenta de resultados</p>
+                <h2 class="section-title">Proyección de ingresos para tu institución</h2>
+                <p class="calculator-context">Simulación basada en 30.000 alumnos matriculados, con una permanencia media de 4 años y coste medio anual de 3.600 €. Tu comisión: 15% de cada prima.</p>
             </div>
 
-            <div class="calculator-card">
-                <div class="calculator-top">
-                    <h3>Escenarios de comision</h3>
-                    <p>15% de cada prima para tu institucion</p>
+            <div class="scenarios-grid">
+                <div class="scenario-card recommended">
+                    <span class="scenario-badge">Recomendado</span>
+                    <h3 class="scenario-title">Inclusión en matrícula</h3>
+                    <p class="scenario-desc">El seguro se incorpora automáticamente a la matrícula de todos los alumnos. Máxima cobertura y máximo retorno.</p>
+
+                    <div class="scenario-metrics">
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">79 €</div>
+                            <div class="scenario-metric-label">Prima anual</div>
+                        </div>
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">100%</div>
+                            <div class="scenario-metric-label">Penetración</div>
+                        </div>
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">2,37M €</div>
+                            <div class="scenario-metric-label">Primas totales/año</div>
+                        </div>
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">355.500 €</div>
+                            <div class="scenario-metric-label">Comisión anual</div>
+                        </div>
+                    </div>
+
+                    <div class="scenario-result">
+                        <div class="scenario-result-label">Ingresos totales para tu institución</div>
+                        <div class="scenario-result-value">1.422.000 €</div>
+                        <div class="scenario-result-period">en 4 años de permanencia media</div>
+                    </div>
                 </div>
-                <div class="calculator-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Modelo</th>
-                                <th>Prima</th>
-                                <th>Penetracion</th>
-                                <th>Total primas</th>
-                                <th>Comision anual</th>
-                                <th>Ingresos 4 anos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="recommended">
-                                <td><strong>Por inclusion</strong></td>
-                                <td>79 EUR</td>
-                                <td>100%</td>
-                                <td>2.370.000 EUR</td>
-                                <td>355.500 EUR</td>
-                                <td class="highlight">1.422.000 EUR</td>
-                            </tr>
-                            <tr>
-                                <td>Voluntaria</td>
-                                <td>104 EUR</td>
-                                <td>25%</td>
-                                <td>780.000 EUR</td>
-                                <td>117.000 EUR</td>
-                                <td class="highlight">468.000 EUR</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <div class="scenario-card">
+                    <h3 class="scenario-title">Contratación voluntaria</h3>
+                    <p class="scenario-desc">El seguro se ofrece como opción durante la matrícula. Las familias deciden si contratarlo.</p>
+
+                    <div class="scenario-metrics">
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">104 €</div>
+                            <div class="scenario-metric-label">Prima anual</div>
+                        </div>
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">25%</div>
+                            <div class="scenario-metric-label">Penetración</div>
+                        </div>
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">780.000 €</div>
+                            <div class="scenario-metric-label">Primas totales/año</div>
+                        </div>
+                        <div class="scenario-metric">
+                            <div class="scenario-metric-value">117.000 €</div>
+                            <div class="scenario-metric-label">Comisión anual</div>
+                        </div>
+                    </div>
+
+                    <div class="scenario-result">
+                        <div class="scenario-result-label">Ingresos totales para tu institución</div>
+                        <div class="scenario-result-value">468.000 €</div>
+                        <div class="scenario-result-period">en 4 años de permanencia media</div>
+                    </div>
                 </div>
             </div>
 
             <div class="value-props">
                 <div class="value-prop">
-                    <h4>Argumentos de venta</h4>
-                    <p>Diferenciacion en el mercado: "Tu matricula esta protegida ante imprevistos"</p>
+                    <h4>Diferenciación competitiva</h4>
+                    <p>Posiciona tu institución como innovadora: "Tu matrícula está protegida ante imprevistos"</p>
                 </div>
                 <div class="value-prop">
-                    <h4>Reduccion de riesgo</h4>
-                    <p>Menos morosidad y mejor flujo de caja ante imprevistos de las familias</p>
+                    <h4>Reducción del riesgo financiero</h4>
+                    <p>Menos morosidad y mejor previsibilidad del flujo de caja ante imprevistos familiares</p>
                 </div>
                 <div class="value-prop">
-                    <h4>Ingresos pasivos</h4>
-                    <p>Comisiones recurrentes sin gestion adicional. La IA gestiona todo</p>
+                    <h4>Ingresos recurrentes pasivos</h4>
+                    <p>Comisiones automáticas sin gestión adicional por parte de tu equipo. La IA se encarga de todo</p>
                 </div>
             </div>
         </div>
@@ -983,23 +1052,23 @@
     <section class="trust">
         <div class="container-wide">
             <div class="trust-header">
-                <p class="section-eyebrow">Confianza</p>
-                <h2 class="section-title">Respaldados por lideres globales</h2>
+                <p class="section-eyebrow">Credibilidad</p>
+                <h2 class="section-title">Respaldados por líderes globales del sector asegurador</h2>
             </div>
 
             <div class="testimonials">
                 <div class="testimonial">
-                    <p class="testimonial-quote">"La integracion fue transparente. En menos de un mes estabamos ofreciendo el seguro a todas las familias nuevas."</p>
+                    <p class="testimonial-quote">"La integración fue completamente transparente. En menos de un mes estábamos ofreciendo el seguro a todas las familias de nuevo ingreso."</p>
                     <p class="testimonial-author">Director de Operaciones</p>
-                    <p class="testimonial-role">Universidad privada, Madrid</p>
+                    <p class="testimonial-role">Universidad privada · Madrid</p>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-quote">"Nuestras familias valoran saber que su inversion educativa esta protegida ante cualquier imprevisto."</p>
+                    <p class="testimonial-quote">"Nuestras familias valoran enormemente saber que su inversión educativa está protegida ante cualquier imprevisto financiero."</p>
                     <p class="testimonial-author">Directora de Admisiones</p>
-                    <p class="testimonial-role">Centro de FP, Barcelona</p>
+                    <p class="testimonial-role">Centro de FP · Barcelona</p>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-quote">"Los claims se resuelven en horas, no en semanas. La IA realmente funciona."</p>
+                    <p class="testimonial-quote">"Los claims se resuelven en horas, no en semanas. La IA realmente funciona y las familias quedan muy satisfechas."</p>
                     <p class="testimonial-author">CFO</p>
                     <p class="testimonial-role">Grupo educativo nacional</p>
                 </div>
@@ -1011,12 +1080,12 @@
                     <div class="metric-label">Asegurados globales</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-number">4.300M</div>
-                    <div class="metric-label">EUR en primas</div>
+                    <div class="metric-number">4.300M €</div>
+                    <div class="metric-label">En primas gestionadas</div>
                 </div>
                 <div class="metric">
                     <div class="metric-number">24h</div>
-                    <div class="metric-label">Resolucion claims</div>
+                    <div class="metric-label">Resolución de claims</div>
                 </div>
                 <div class="metric">
                     <div class="metric-number">2025</div>
@@ -1030,25 +1099,25 @@
     <section class="steps-section">
         <div class="container-wide">
             <div class="steps-header">
-                <p class="section-eyebrow">Proceso</p>
-                <h2 class="section-title">Integracion en 3 pasos</h2>
+                <p class="section-eyebrow">Implementación</p>
+                <h2 class="section-title">Integración en 3 pasos</h2>
             </div>
 
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Anade a tu matricula</h3>
-                    <p>Incluye el seguro en tu proceso existente. Solo +79 EUR al coste total.</p>
+                    <h3>Añade a tu matrícula</h3>
+                    <p>Incorpora el seguro en tu proceso de matriculación existente. Solo +79 € al coste total.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>La IA gestiona todo</h3>
-                    <p>Distribucion automatica, atencion a familias y gestion de claims sin intervencion.</p>
+                    <p>Distribución automática, atención a familias y gestión de claims sin intervención de tu equipo.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Recibe comisiones</h3>
-                    <p>15% de cada prima directamente. Ingresos recurrentes cada curso academico.</p>
+                    <p>15% de cada prima directamente en tu cuenta. Ingresos recurrentes cada curso académico.</p>
                 </div>
             </div>
         </div>
@@ -1058,8 +1127,8 @@
     <section class="cta-section" id="demo">
         <div class="container">
             <p class="section-eyebrow">Siguiente paso</p>
-            <h2 class="section-title">Solicita una demo personalizada</h2>
-            <p class="section-subtitle">Calculamos el impacto especifico para tu institucion en una llamada de 30 minutos</p>
+            <h2 class="section-title">Solicita una demo ejecutiva</h2>
+            <p class="section-subtitle">Calculamos el impacto específico para tu institución en una reunión de 30 minutos con nuestro equipo directivo</p>
 
             <div class="form-container">
                 <form action="#" method="POST">
@@ -1067,20 +1136,20 @@
                         <input type="text" class="form-input" name="nombre" placeholder="Nombre completo" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="cargo" placeholder="Cargo" required>
+                        <input type="text" class="form-input" name="cargo" placeholder="Cargo (ej: CEO, CFO, Director General)" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="institucion" placeholder="Institucion" required>
+                        <input type="text" class="form-input" name="institucion" placeholder="Institución" required>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-input" name="email" placeholder="Email corporativo" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-input" name="telefono" placeholder="Telefono (opcional)">
+                        <input type="tel" class="form-input" name="telefono" placeholder="Teléfono (opcional)">
                     </div>
-                    <button type="submit" class="submit-btn">Solicitar demo gratuita</button>
+                    <button type="submit" class="submit-btn">Solicitar demo ejecutiva</button>
                 </form>
-                <p class="form-note"><strong>Prueba piloto disponible</strong> — Implementacion gratuita en un centro para validar resultados</p>
+                <p class="form-note"><strong>Prueba piloto disponible</strong> — Implementación gratuita en un centro para validar resultados antes de escalar</p>
             </div>
         </div>
     </section>
@@ -1095,8 +1164,8 @@
             </div>
 
             <div class="footer-links">
-                <a href="#">Politica de Privacidad</a>
-                <a href="#">Terminos</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos</a>
                 <a href="#">Aviso Legal</a>
             </div>
 
@@ -1105,10 +1174,10 @@
             </div>
 
             <p class="footer-regulatory">
-                Coberio Broker autorizado por DGSFP. SegurosIA y Coberio son las unicas companias aprobadas en el Sandbox Financiero Espanol 2025.
+                Coberio Broker autorizado por la DGSFP para la distribución de seguros. SegurosIA y Coberio son las únicas compañías aprobadas en el Sandbox Financiero Español 2025.
             </p>
 
-            <p class="footer-copyright">Copyright 2026 SegurosIA + Coberio Broker</p>
+            <p class="footer-copyright">© 2026 SegurosIA + Coberio Broker. Todos los derechos reservados.</p>
         </div>
     </footer>
 
