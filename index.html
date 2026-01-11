@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seguro de Continuidad Educativa con IA - Protege tu institución educativa y genera ingresos pasivos con Coberio Broker">
+    <title>Seguro de Continuidad Educativa con IA | Coberio Broker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #003366;
+            --navy-light: #e8f0f8;
+            --gray-light: #f5f5f7;
+            --white: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-light) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 51, 102, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-illustration {
+            width: 100%;
+            max-width: 320px;
+            height: 200px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .hero-illustration svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 600;
+            line-height: 1.15;
+            max-width: 800px;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background: var(--navy);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #004080;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.25);
+        }
+
+        .partners {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .partners-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .partners-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            height: 28px;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        /* Problem & Solution Section */
+        .problem-solution {
+            background: var(--gray-light);
+            padding: 100px 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .problem-text {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .problem-stat {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .solution-content h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: var(--navy);
+        }
+
+        .solution-list {
+            list-style: none;
+        }
+
+        .solution-list li {
+            padding: 16px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .solution-list li:last-child {
+            border-bottom: none;
+        }
+
+        .solution-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            background: var(--navy);
+            border-radius: 50%;
+        }
+
+        .flow-diagram {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--navy-light);
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .flow-arrow {
+            color: var(--navy);
+            font-size: 20px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: var(--white);
+            padding: 100px 24px;
+        }
+
+        .benefits-table-wrapper {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .benefits-table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: var(--white);
+        }
+
+        .benefits-table th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 20px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .benefits-table th:first-child {
+            border-radius: 16px 0 0 0;
+        }
+
+        .benefits-table th:last-child {
+            border-radius: 0 16px 0 0;
+        }
+
+        .benefits-table td {
+            padding: 20px 16px;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 15px;
+        }
+
+        .benefits-table tr:last-child td:first-child {
+            border-radius: 0 0 0 16px;
+        }
+
+        .benefits-table tr:last-child td:last-child {
+            border-radius: 0 0 16px 0;
+        }
+
+        .benefits-table .highlight {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .benefits-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .benefits-list li {
+            padding: 16px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .benefits-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23003366'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: var(--navy-light);
+            padding: 100px 24px;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-quote {
+            font-size: 17px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .institutions {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .institutions-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .institutions-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .institution-name {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 18px;
+        }
+
+        .global-stat {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .global-stat strong {
+            display: block;
+            font-size: clamp(32px, 5vw, 48px);
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: var(--white);
+            padding: 100px 24px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 40px 24px;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .steps-connector {
+            display: none;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: var(--navy);
+            padding: 100px 24px;
+        }
+
+        .final-cta .section-title {
+            color: var(--white);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .submit-button {
+            width: 100%;
+            background: var(--white);
+            color: var(--navy);
+            padding: 18px 40px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .pilot-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-top: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 24px 40px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            margin-top: 20px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+
+            .testimonials {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(3, 1fr);
+                position: relative;
+            }
+
+            .steps::before {
+                content: '';
+                position: absolute;
+                top: 76px;
+                left: 15%;
+                right: 15%;
+                height: 2px;
+                background: var(--navy-light);
+            }
+
+            .step {
+                position: relative;
+                background: var(--white);
+            }
+
+            .hero-illustration {
+                max-width: 450px;
+                height: 280px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 80px 48px 100px;
+            }
+
+            .problem-solution,
+            .benefits,
+            .social-proof,
+            .how-it-works,
+            .final-cta {
+                padding: 120px 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-illustration">
+            <svg viewBox="0 0 450 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Abstract graduation illustration -->
+                <rect x="125" y="180" width="200" height="80" rx="8" fill="#f5f5f7"/>
+
+                <!-- Graduate figures - minimalist -->
+                <circle cx="175" cy="120" r="25" fill="#003366" opacity="0.2"/>
+                <rect x="155" y="150" width="40" height="50" rx="4" fill="#003366" opacity="0.2"/>
+                <rect x="157" y="95" width="36" height="8" fill="#003366" opacity="0.3"/>
+                <polygon points="175,85 195,95 155,95" fill="#003366" opacity="0.3"/>
+
+                <circle cx="225" cy="100" r="30" fill="#003366" opacity="0.4"/>
+                <rect x="200" y="135" width="50" height="65" rx="4" fill="#003366" opacity="0.4"/>
+                <rect x="203" y="70" width="44" height="10" fill="#003366" opacity="0.5"/>
+                <polygon points="225,58 250,70 200,70" fill="#003366" opacity="0.5"/>
+
+                <circle cx="285" cy="115" r="28" fill="#003366" opacity="0.3"/>
+                <rect x="262" y="148" width="46" height="55" rx="4" fill="#003366" opacity="0.3"/>
+                <rect x="265" y="87" width="40" height="9" fill="#003366" opacity="0.4"/>
+                <polygon points="285,75 310,87 260,87" fill="#003366" opacity="0.4"/>
+
+                <!-- Shield/protection symbol -->
+                <path d="M385 80 L385 130 Q385 160 360 175 Q335 160 335 130 L335 80 L360 70 L385 80Z" fill="#003366" opacity="0.15" stroke="#003366" stroke-width="2" opacity="0.3"/>
+                <path d="M350 115 L358 123 L375 105" stroke="#003366" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+
+                <!-- Decorative elements -->
+                <circle cx="80" cy="150" r="40" fill="#003366" opacity="0.05"/>
+                <circle cx="400" cy="200" r="50" fill="#003366" opacity="0.05"/>
+                <circle cx="60" cy="80" r="20" fill="#003366" opacity="0.08"/>
+            </svg>
+        </div>
+
+        <h1>Protege el Futuro de Tu Institucion: Seguro IA que Genera Ingresos y Reduce Riesgos</h1>
+
+        <p>Reembolsa matriculas por imprevistos financieros, integra IA para claims rapidos, y gana comisiones del 15% - sin esfuerzo adicional</p>
+
+        <a href="#contacto" class="cta-button">Agenda una Demo Gratuita</a>
+
+        <div class="partners">
+            <span class="partners-label">Respaldado por</span>
+            <div class="partners-logos">
+                <svg class="partner-logo" viewBox="0 0 120 28" fill="#003366">
+                    <text x="0" y="22" font-family="Inter, sans-serif" font-weight="600" font-size="18">MAPFRE</text>
+                </svg>
+                <svg class="partner-logo" viewBox="0 0 60 28" fill="#003366">
+                    <text x="0" y="22" font-family="Inter, sans-serif" font-weight="600" font-size="18">AXA</text>
+                </svg>
+                <svg class="partner-logo" viewBox="0 0 80 28" fill="#003366">
+                    <text x="0" y="22" font-family="Inter, sans-serif" font-weight="600" font-size="16">DGSFP</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <h2 class="section-title">El Desafio de la Morosidad Educativa</h2>
+            <p class="problem-text">
+                El <span class="problem-stat">56% de familias</span> teme perdidas de empleo, causando
+                <span class="problem-stat">>1M EUR en deudas anuales</span> para instituciones grandes.
+            </p>
+
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>Nuestra Solucion</h3>
+                    <ul class="solution-list">
+                        <li>Cobertura automatica por despidos, enfermedades o emergencias</li>
+                        <li>IA para distribucion y claims en 24h</li>
+                        <li>Adaptado a modalidades online/in-person, incluyendo riesgos ciberneticos</li>
+                        <li>Autorizado por Sandbox Financiero 2025</li>
+                    </ul>
+                </div>
+
+                <div class="flow-diagram">
+                    <div class="flow-steps">
+                        <div class="flow-step">Matricula</div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step">Evento</div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step">Reembolso</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Impacto Real para Tu Institucion</h2>
+
+            <div class="benefits-table-wrapper">
+                <table class="benefits-table">
+                    <thead>
+                        <tr>
+                            <th>Escenario</th>
+                            <th>Prima Anadida</th>
+                            <th>Penetracion</th>
+                            <th>Comision</th>
+                            <th>Ingresos Anuales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inclusion Obligatoria</td>
+                            <td>+79 EUR</td>
+                            <td>100%</td>
+                            <td>15%</td>
+                            <td class="highlight">1.659.000 EUR</td>
+                        </tr>
+                        <tr>
+                            <td>Inclusion Voluntaria</td>
+                            <td>+79 EUR</td>
+                            <td>30%</td>
+                            <td>15%</td>
+                            <td class="highlight">497.700 EUR</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 13px; margin-top: 12px;">*Basado en 140.000 alumnos</p>
+
+            <ul class="benefits-list">
+                <li>Reduce morosidad en 1-2%</li>
+                <li>Diferenciacion en marketing: "Estudia sin Interrupciones"</li>
+                <li>Ingresos pasivos sin gestion extra</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Instituciones que Confian en Nosotros</h2>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Aumentamos ingresos en 20% sin asumir ningun riesgo adicional. La integracion fue transparente para nuestro equipo."</p>
+                    <p class="testimonial-author">Maria Garcia</p>
+                    <p class="testimonial-role">CEO, Universidad de Negocios</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Nuestras familias valoran enormemente la tranquilidad de saber que su inversion esta protegida."</p>
+                    <p class="testimonial-author">Carlos Ruiz</p>
+                    <p class="testimonial-role">Director General, Centro FP Tech</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-quote">"La IA resuelve claims en horas, no semanas. Ha transformado nuestra relacion con los alumnos."</p>
+                    <p class="testimonial-author">Ana Martinez</p>
+                    <p class="testimonial-role">CFO, Grupo Educativo Nacional</p>
+                </div>
+            </div>
+
+            <div class="institutions">
+                <p class="institutions-label">Partners educativos</p>
+                <div class="institutions-logos">
+                    <span class="institution-name">Universidad Loyola</span>
+                    <span class="institution-name">Davante</span>
+                </div>
+            </div>
+
+            <div class="global-stat">
+                <strong>>15M</strong>
+                asegurados globales
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Integracion Sencilla</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Anade a matricula existente</h3>
+                    <p>Integra el seguro en tu proceso de matriculacion actual sin cambios complejos</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>IA gestiona todo</h3>
+                    <p>Nuestra tecnologia automatiza la distribucion, claims y comunicacion con familias</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Recibe comisiones mensuales</h3>
+                    <p>Obtén ingresos pasivos directamente en tu cuenta cada mes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Empieza Hoy</h2>
+
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="cargo" placeholder="Cargo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="institucion" placeholder="Institucion" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" name="email" placeholder="Email corporativo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-input" name="telefono" placeholder="Telefono">
+                    </div>
+                    <button type="submit" class="submit-button">Solicitar Demo</button>
+                </form>
+                <p class="pilot-text">Prueba piloto gratuita en un centro</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Coberio</div>
+
+            <div class="footer-links">
+                <a href="#">Politica de Privacidad</a>
+                <a href="#">Terminos y Condiciones</a>
+            </div>
+
+            <div class="footer-contact">
+                <a href="mailto:info@coberio.es">info@coberio.es</a> |
+                <a href="tel:+34900000000">+34 900 000 000</a>
+            </div>
+
+            <div class="footer-copyright">
+                &copy; 2026 Coberio Broker. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
